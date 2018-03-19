@@ -1,13 +1,13 @@
 <template>
   <div class="item">
-    <section>
+    <section class="info-section">
       <img :src="item.image" :alt="item.name" width="100" class="item-image">
       <h1 class="item-name">{{ item.name }}</h1>
     </section>
 
     <section>
-      <button class="item-button" @click="increase(10)">+10</button>
-      <button class="item-button" @click="decrease(10)">-10</button>
+      <button class="item-button increase" @click="increase(10)">+10</button>
+      <button class="item-button decrease" @click="decrease(10)">-10</button>
     </section>
 
     <section>
@@ -42,16 +42,12 @@ export default {
 <style lang="scss" scoped>
 .item {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 
   section {
     padding: 1rem;
   }
-}
-
-.item-image {
-
 }
 
 .item-name {
@@ -63,9 +59,25 @@ export default {
   font-size: 1.5rem;
   border-radius: 5px;
   outline: none;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+
+  &.increase {
+    // border-color: #999;
+  }
+
+  &.decrease {
+    // opacity: 0.8;
+  }
 }
 
 .item-quantity {
   font-size: 3rem;
+  margin-left: 1rem;
+}
+
+.info-section {
+  width: 200px;
+  text-align: center;
 }
 </style>

@@ -30,6 +30,7 @@ export default {
 .filter {
   width: 100%;
   display: flex;
+  justify-content: center;
 }
 
 .filter-option {

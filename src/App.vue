@@ -1,12 +1,14 @@
 <template>
   <main>
 
-    <item-filter />
+    <item-filter class="item-filter" />
 
-    <item-card
-      v-for="item in checkedItems"
-      :key="item.id"
-      :item="item" />
+    <div class="container">
+      <item-card
+        v-for="item in checkedItems"
+        :key="item.id"
+        :item="item" />
+    </div>
 
   </main>
 </template>
@@ -33,7 +35,14 @@ export default {
 
 <style lang="scss">
 @import '../node_modules/bootstrap/scss/bootstrap-reboot.scss';
-@import '../node_modules/bootstrap/scss/bootstrap-grid.scss';
 
+.item-filter {
+  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
 
+.container {
+  width: 600px;
+  margin: 0 auto;
+}
 </style>

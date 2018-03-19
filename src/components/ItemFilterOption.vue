@@ -1,5 +1,5 @@
 <template>
-  <div class="filter-option">
+  <div>
 
     <input
       :id="item.id"
@@ -54,6 +54,10 @@ label {
   background-position: left center;
   background-size: auto 100%;
   border-radius: 5px;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 input:checked + label {
