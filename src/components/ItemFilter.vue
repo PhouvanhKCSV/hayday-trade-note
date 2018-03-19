@@ -3,33 +3,26 @@
     <div class="filter">
       <item-filter-option
         class="filter-option"
-        v-for="(item, index) in items"
-        :key="index"
-        :id="`checkbox-${index}`"
-        :name="item.name"
-        :image="item.image"></item-filter-option>
+        v-for="item in items"
+        :key="item.id"
+        :item="item"></item-filter-option>
     </div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import ItemFilterOption from './ItemFilterOption'
 
 export default {
-  data: () => ({
-    items: [
-      { name: 'Bolt', image: '/images/Bolt.png' },
-      { name: 'Plank', image: '/images/Plank.png' },
-      { name: 'Duct Tape', image: '/images/Duct_Tape.png' },
-
-      { name: 'Nail', image: '/images/Nail.png' },
-      { name: 'Screw', image: '/images/Screw.png' },
-      { name: 'Wood Panel', image: '/images/Wood_Panel.png' },
-    ]
-  }),
   components: {
     ItemFilterOption
-  }
+  },
+  computed: {
+    ...mapGetters('supplies', [
+      'items'
+    ])
+  },
 }
 </script>
 

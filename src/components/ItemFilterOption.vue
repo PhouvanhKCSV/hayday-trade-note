@@ -2,32 +2,42 @@
   <div class="filter-option">
 
     <input
-      :id="id"
+      :id="item.id"
       type="checkbox"
-      value="option"/>
+      value="option"
+      v-model="checkedState" />
 
       <label
-        :for="id"
-        :style="`background-image: url(${image})`"></label>
+        :for="item.id"
+        :style="`background-image: url(${item.image})`"></label>
 
     </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   props: {
-    id: {
-      type: String,
-      required: true
-    },
-    name: {
-      type: String,
-      required: true
-    },
-    image: {
-      type: String,
+    item: {
+      type: Object,
       required: true
     }
+  },
+  computed: {
+    checkedState: {
+      get () {
+        return this.item.checked
+      },
+      set (value) {
+        this.updateItemCheckedState({ ...this.item, checked: value })
+      }
+    }
+  },
+  methods: {
+    ...mapActions('supplies', [
+      'updateItemCheckedState'
+    ])
   }
 }
 </script>
