@@ -1,17 +1,33 @@
 <template>
-  <div>
+  <main>
+
     <item-filter />
-  </div>
+
+    <item-card
+      v-for="item in checkedItems"
+      :key="item.id"
+      :item="item" />
+
+  </main>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import ItemFilter from './components/ItemFilter'
+import ItemCard from './components/ItemCard'
 
 export default {
   name: 'app',
   components: {
-    ItemFilter
-  }
+    ItemFilter,
+    ItemCard
+  },
+  computed: {
+    ...mapGetters('supplies', [
+      'allItems',
+      'checkedItems'
+    ])
+  },
 }
 </script>
 

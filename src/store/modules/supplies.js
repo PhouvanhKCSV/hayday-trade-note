@@ -11,7 +11,8 @@ const state = {
 }
 
 const getters = {
-  items: state => state.items
+  allItems: state => state.items,
+  checkedItems: state => state.items.filter(item => item.checked)
 }
 
 const actions = {

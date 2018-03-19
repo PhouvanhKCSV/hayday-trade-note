@@ -3,7 +3,7 @@
     <div class="filter">
       <item-filter-option
         class="filter-option"
-        v-for="item in items"
+        v-for="item in allItems"
         :key="item.id"
         :item="item"></item-filter-option>
     </div>
@@ -20,7 +20,7 @@ export default {
   },
   computed: {
     ...mapGetters('supplies', [
-      'items'
+      'allItems'
     ])
   },
 }
