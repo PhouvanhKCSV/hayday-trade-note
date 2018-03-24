@@ -6,7 +6,11 @@ const state = {
 
     { id: 'nail', name: 'Nail', image: '/images/Nail.png', checked: false },
     { id: 'screw', name: 'Screw', image: '/images/Screw.png', checked: false },
-    { id: 'wood_panel', name: 'Wood Panel', image: '/images/Wood_Panel.png', checked: false }
+    { id: 'wood_panel', name: 'Wood Panel', image: '/images/Wood_Panel.png', checked: false },
+
+    { id: 'land_deed', name: 'Land Deed', image: '/images/Land_Deed.png', checked: false },
+    { id: 'mallet', name: 'Mallet', image: '/images/Mallet.png', checked: false },
+    { id: 'marker_stake', name: 'Marker Stake', image: '/images/Marker_Stake.png', checked: false },
   ]
 }
 
